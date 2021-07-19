@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'cameras/css/bootstrap.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'cameras/css/style.css' %}" type="text/css">
+</head>
+<body>
+{% block mainmenu %}
+<ul>
+  {% for m in menu %}
+  <li>{{ m }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{% block content %}
+{% endblock %}
+<script src="{% static 'cameras/js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

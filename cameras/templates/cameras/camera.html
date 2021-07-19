@@ -1,0 +1,23 @@
+{% extends 'cameras/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-5">{{ title }}</h1>
+    <div class="col-12 col-md-6 mb-5">
+        <div class="col-12 d-flex justify-content-between">
+            <div>IP</div>
+            <div>{{ camera.ip_address }}</div>
+        </div>
+        <div class="col-12 d-flex justify-content-between">
+            <div>Последнее обновление</div>
+            <div>{{ camera.updated_at }}</div>
+        </div>
+    </div>
+    <div class="col-12 cameras-views mb-5">
+        <!--<img  src="http://{{ camera.ip_address }}:{{camera.port}}/stream" alt="" height="300" width="400">-->
+        <!--<img  src="{% url 'stream' camera.id %}" alt="" height="300" width="400">-->
+        <img  src="{% url 'test' camera.id %}" alt="" height="300" width="400">
+    </div>
+    <a class="btn btn-secondary" href="{% url 'main' %}">назад</a>
+</div>
+{% endblock %}

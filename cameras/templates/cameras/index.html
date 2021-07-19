@@ -1,0 +1,23 @@
+{% extends 'cameras/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="mb-5">{{ title }}</h1>
+    <div class="row">
+       {% for camera in cameras %}
+        <div class="col-12 col-lg-6 px-0">
+            <a href="{% url 'cameras' camera.id %}"
+               class="text-decoration-none row rounded-end bg-light border mx-1 mb-2 text-dark py-2">
+                <div class="col-1">{{ camera.id }}</div>
+                <div class="col-5 ps-0">{{ camera.name }}</div>
+                <div class="col-2 ps-0 text-center">{{ camera.ip_address }}</div>
+                <div class="col-4 ps-0 text-end">{{ camera.updated_at|date:"Y-m-d" }}</div>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
